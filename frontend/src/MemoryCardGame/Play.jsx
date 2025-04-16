@@ -69,7 +69,7 @@ const Play = () => {
   const [PlaymodalIsOpen, setModalPlayIsOpen] = useState(false);
   const [difficulty, setDifficulty] = useState(null);
   const [isCalmMode, setIsCalmMode] = useState(false);
-  
+
   const [bgVolume, setBgVolume] = useState(
     localStorage.getItem("bgVolume") !== null ? parseInt(localStorage.getItem("bgVolume"), 10) : 50
   );
@@ -206,6 +206,11 @@ const Play = () => {
     }
   };
 
+  const handleHistory = () => {
+    navigate("/game-history");
+  };
+
+
   return (
     <div
       className="background-container"
@@ -224,6 +229,13 @@ const Play = () => {
           onMouseEnter={playHoverSound}
         >
           Play
+        </button>
+        <button
+          className={`game-button ${isCalmMode ? "calm-button" : ""}`}
+          onClick={handleHistory}
+          onMouseEnter={playHoverSound}
+        >
+          Game History
         </button>
         <button
           className={`game-button ${isCalmMode ? "calm-button" : ""}`}

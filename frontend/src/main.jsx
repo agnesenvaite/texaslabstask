@@ -10,6 +10,7 @@ import MemoryCardGame from './MemoryCardGame/MemoryCardGame';
 import Congratulations from "./MemoryCardGame/Congratulation";
 import CongtEasy from "./MemoryCardGame/Congratseasy";
 import CongtNormal from "./MemoryCardGame/Congratsnormal";
+import {GameHistory} from './MemoryCardGame/GameHistory.jsx';
 
 
 const App = () => {
@@ -32,24 +33,27 @@ const App = () => {
         <Route path="/congratulations"
       element={isAuthenticated ? <Congratulations /> : <Navigate to="/login" />}
       />
-     
+        <Route path="/game-history"
+               element={isAuthenticated ? <GameHistory /> : <Navigate to="/login" />}
+        />
+
       <Route path="/congt-easy"
       element={isAuthenticated ? <CongtEasy /> : <Navigate to="/login" />}
       />
       <Route path="/congt-normal"
       element={isAuthenticated ? <CongtNormal /> : <Navigate to="/login" />}
       />
-        <Route path="/easy" 
+        <Route path="/easy"
        element={isAuthenticated ? <Easy /> : <Navigate to="/login" />}
         />
-        <Route path="/medium" 
+        <Route path="/medium"
          element={isAuthenticated ? <Medium /> : <Navigate to="/login" />}
          />
         <Route
           path="/play"
           element={isAuthenticated ? <Play /> : <Navigate to="/login" />}
         />
-  
+
         <Route
           path="/memory-card-game"
           element={isAuthenticated ? <MemoryCardGame /> : <Navigate to="/login" />}

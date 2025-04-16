@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Login.module.css';
@@ -30,6 +30,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
+    <div className={styles.loginPage}>
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
@@ -57,6 +58,7 @@ const Login = ({ onLogin }) => {
         </div>
         {error && <p className={styles.error}>{error}</p>}
       </form>
+    </div>
     </div>
   );
 };

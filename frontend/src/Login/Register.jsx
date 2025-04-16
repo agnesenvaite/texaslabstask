@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import styles from './Register.module.css';
 
@@ -17,6 +17,7 @@ const Register = () => {
   };
 
   return (
+    <div className={styles.registerPage}>
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h2>Register</h2>
@@ -39,6 +40,7 @@ const Register = () => {
         </button>
         {message && <p className={styles.message}>{message}</p>}
       </form>
+    </div>
     </div>
   );
 };
